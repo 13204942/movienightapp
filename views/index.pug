@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	h1= 'Hot Movies This Week'
+	p @ Movie Night
+
+	table.table
+		thead
+			tr
+				th Title
+				th Durations
+				th Original Title
+				th Rating
+		tbody
+			for movie in movies.subjects
+				tr
+					td= movie.subject.title
+					td= movie.subject.durations
+					td= movie.subject.original_title
+					td= movie.subject.rating.average
+block footer
+	p Thanks douban.com
