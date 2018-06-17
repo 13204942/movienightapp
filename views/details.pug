@@ -14,5 +14,5 @@ block content
       - var imgurl = cast.avatars.small
       - var delegateurl = "https://images.weserv.nl/?url=" + imgurl.substr(7,imgurl.length)
       div(class="col-3")
-        img(src=delegateurl)
+        img.cast(src=delegateurl)
         p= cast.name
