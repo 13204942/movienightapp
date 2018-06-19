@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .row
+    .col-md-9
+      h1= 'Search any movie'
+      p @ Movie Night
+
+      // search form
+      div.input-group.mb-3
+        input#searchmovie.form-control(type='text', placeholder='movie name or a word...' name='searchInput')
+        div.input-group-append
+          button.btn.btn-primary(type='submit') Go search
+
+      form(method='GET' action='/')
+        div.form-group
+          div.input-group
+            input#searchmovie.form-control(type='text', placeholder='movie name or a word...' name='search')
+            div.input-group-append
+              button.btn.btn-primary(type='submit') Go search
+
+block footer
+  p Thanks <a href='https://www.douban.com/'>douban.com</a>

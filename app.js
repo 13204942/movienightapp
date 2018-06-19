@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var detailsRouter = require('./routes/details');
+var searchRouter = require('./routes/search');
 var usersRouter = require('./routes/users');
 var errorRouter = require('./routes/error');
 
@@ -24,6 +25,7 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist')
 
 app.use('/', indexRouter);
 app.use('/details', detailsRouter);
+app.use('/search', searchRouter);
 app.use('/users', usersRouter);
 app.use('/error', errorRouter);
 
