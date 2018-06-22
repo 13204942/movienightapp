@@ -11,6 +11,7 @@ block content
 				th Durations
 				th Original Title
 				th Rating
+				th Genres
 				th
 		tbody
 			for movie in movies.subjects
@@ -19,6 +20,7 @@ block content
 					td= movie.subject.durations
 					td= movie.subject.original_title
 					td= movie.subject.rating.average
+					td= movie.subject.genres
 					td: a(href='/details/' + movie.subject.id) More Info
 block footer
 	p Thanks <a href='https://www.douban.com/'>douban.com</a>
