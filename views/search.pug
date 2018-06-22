@@ -7,17 +7,37 @@ block content
       p @ Movie Night
 
       // search form
-      div.input-group.mb-3
-        input#searchmovie.form-control(type='text', placeholder='movie name or a word...' name='searchInput')
-        div.input-group-append
-          button.btn.btn-primary(type='submit') Go search
+      //div.input-group.mb-3
+      //  input#searchmovie.form-control(type='text', placeholder='movie name or a word...' name='searchInput')
+      //  div.input-group-append
+      //  button.btn.btn-primary(type='submit') Go search
 
-      form(method='GET' action='/')
-        div.form-group
+      div
+        form(action='/search' method='get')
           div.input-group
-            input#searchmovie.form-control(type='text', placeholder='movie name or a word...' name='search')
+            input.form-control(type='text', id='search', name='searchMovie' placeholder='movie name or a word...')
             div.input-group-append
-              button.btn.btn-primary(type='submit') Go search
+              button.btn.btn-primary(type='submit') Search
+      
+      div     
+        table.table
+          thead
+            tr
+              th Title
+              th Durations
+              th Original Title
+              th Rating
+              th Genres
+              th
+          tbody
+            for movie in movies.subjects
+              tr
+                td= movie.title
+                td= movie.durations
+                td= movie.original_title
+                td= movie.rating.average
+                td= movie.genres
+                td: a(href='/details/' + movie.id) More Info
 
 block footer
   p Thanks <a href='https://www.douban.com/'>douban.com</a>
